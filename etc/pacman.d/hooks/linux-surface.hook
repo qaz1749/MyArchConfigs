@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = intel-ucode
+Target = linux-surface
+[Action]
+Description = Generate Secure Boot EFI File......
+When = PostTransaction
+Exec = /usr/bin/bash -c "sudo bash /root/Mok/generate-secure.sh"

@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = sddm
+Target = sddm-git
+
+[Action]
+Description = Setting sddm language...
+When = PostTransaction
+Exec = /usr/bin/bash -c "sed -i 's/\[Service\]/&\nEnvironment=LANG='"$LANG"'/' /usr/lib/systemd/system/sddm.service"
